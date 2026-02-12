@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/base-layout.astro";
+
+const sections = await getCollection("sections");
+const sorted = sections.sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout title="Principles">
+  <h1>Principles</h1>
+  <p>
+    Systems built from small, honest, self-describing capabilities that humans
+    and agents compose with confidence — because every piece declares what it
+    does, what it risks, and how to watch it.
+  </p>
+  <hr />
+  <ol class="toc">
+    {
+      sorted.map((section) => (
+        <li>
+          <a href={`${import.meta.env.BASE_URL}${section.id}`}>
+            <span class="toc-title">{section.data.title}</span>
+            <span class="toc-desc">{section.data.description}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ol>
+</BaseLayout>
