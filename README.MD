@@ -116,11 +116,11 @@ A developer's laptop is a datacenter with a single node. A production cluster is
 
 ### 13. Pure Functions in Small Files
 
-Pure functions in small files with single main function. Helper functions rarely needed but allowed. More often helpers are reusable pure functions themselves and should be in utils/
+Pure functions in small files with single main function. Helper functions rarely needed but allowed. More often helpers are reusable pure functions themselves and should be in utils/.
 
 ### 14. File Size
 
-Files should not exceed the low 100s of lines of code in size, though this can be larger for files like React components, which have a lot of tags.
+Files should not exceed the low 100s of lines of code in size, though this can be larger for files like React components, which have a lot of tags. Here's some perspective: I am a human, I've never seen the source, I know about Fastify, I prefer to follow a route in and out, understanding the code to enhance or fix it. Anywhere along this path if I run into a file that LOTS of functions or a single function with LOTS of lines and concerns my cognitive burden increases and my effectiveness diminishes.
 
 ### 15. Barrel-Driven Directory Structure
 
